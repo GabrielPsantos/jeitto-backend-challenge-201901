@@ -1,0 +1,15 @@
+Click==7.0
+Flask==1.1.1
+psycopg2-binary==2.8.3
+requests==2.23.0
+Flask-Migrate
+coverage
+pytest
+flask-restplus
+flask-cors
+passlib
+Flask-SQLAlchemy
+flask-migrate
+flask-marshmallow
+marshmallow-sqlalchemy
+Flask-JWT-Extended
