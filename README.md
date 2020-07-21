@@ -149,7 +149,7 @@ docker-compose exec web coverage html
 
 Se tudo deu certo, a um health-check estara disponivel no endereço http://localhost:5000/health-check
 
-#### Com tudo de rodando
+#### Com tudo rodando
 
 exportar o arquivo Phone_recharger.postman_collection.json para o seu postman, se cadastrar, logar e usar os endpoints
 
