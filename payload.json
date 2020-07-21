@@ -1,0 +1,18 @@
+company
+
+{
+"company_id": "claro_11",
+ "products":[
+   {"id": "claro_10", "value": 10.0},
+   {"id": "claro_20", "value": 20.0}
+ ]
+}
+
+
+charge
+{
+   "company_id": "claro_11",
+   "product_id": "claro_10",
+   "phone_number": "5511999999999",
+   "value": 10.00
+}

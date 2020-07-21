@@ -122,21 +122,53 @@ O que **gostariamos** de ver:
 - Amigavel com Google Cloud.
 - Segurança de dados.
 
-Perguntas que devem ser respondidas
+## Trilha sonora utilizada 
+- [Plantasia - Mort Garson](https://open.spotify.com/track/4CyTrR4c13d57jCVstfS8T?si=CmsPh3KzShiD3SaxNdH8gw)
+
+## Instruções
+
+#### Construa o ambiente
+
+    docker-compose up --b --d
+
+#### Rode as migrations
+
+  docker-compose exec web flask db init
+  docker-compose exec web flask db migrate
+  docker-compose exec web flask db upgrade
+
+#### Execute os testes
+
+docker-compose exec web coverage run --source=project -m unittest discover -s tests/
+
+#### Gere o HTML de Cobertura
+
+docker-compose exec web coverage html
+
+#### REST API
+
+Se tudo deu certo, a um health-check estara disponivel no endereço http://localhost:5000/health-check
+
+#### Com tudo de rodando
+
+exportar o arquivo Phone_recharger.postman_collection.json para o seu postman, se cadastrar, logar e usar os endpoints
+
+# Perguntas que devem ser respondidas
+
 - Quais foram os principais desafios durante o desenvolvimento?
+
+O maior desafio foi deixar a estrutura de testes rodando dentro do container alem do fato de lidar com Schemas aninhados para a validação de duas entidades no mesmo endpoint  
+
 - O que você escolheu como arquitetura/framework/banco e por que?
+
+A escolha de Flask e postgress pela facilidade de deixar tudo de pé, alem de já ter lidado anteriormente
+
 - O que falta desenvolver / como poderiamos melhorar o que você entregou?
+
+Poderiamos melhorar automatizando o deploy e adicionar o Swagger ou algum tipo de acesso e documentação gerada para os endpoints
+
 - Python é a melhor escolha para esta atividade? Por que?
 
+Sim, porem, se possivel usaria serverless.
 
-## Trilha sonora recomendada
-- [AC/DC Radio](https://open.spotify.com/user/spotify/playlist/37i9dQZF1E4sEEhVjuqbvL?si=uw6fr-VcTVSopgvRL0koWw)
-
-
-## Leituras recomendadas
-- [Small acts manifesto](http://smallactsmanifesto.org/) sobre comportamento humano e social.
-- [The Twelve-Factor App](https://12factor.net/pt_br/) é manifesto sobre o desenvolvimento e boas práticas para facilitar a manutenção de softwares.
-- [Design Patterns for Humans](https://github.com/kamranahmedse/design-patterns-for-humans) texto excelente explicando e mostrando exemplos de uso de padrões de projetos.
-- [Python Patterns](https://github.com/faif/python-patterns) é um repostiório com exemplos de padrões de projetos implementados em python.
-- [Continuous integration vs. continuous delivery vs. continuous deployment](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
-- [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)
+![alt text](https://i.kym-cdn.com/entries/icons/mobile/000/028/021/work.jpg)

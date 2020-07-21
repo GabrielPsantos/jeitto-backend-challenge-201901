@@ -1,0 +1,223 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Phone_recharger",
+		"_postman_id": "5712c3b7-b56e-0d62-fb27-6fd59983d37d",
+		"description": "API para permitir a compra de créditos telefônicos onde o usuário, após informar o número à ser recarregado a compra será efetuada.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"description": "Endpoints de Autenticação",
+			"item": [
+				{
+					"name": "http://localhost:5000/signin",
+					"request": {
+						"url": "http://localhost:5000/signin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"mail1111@mail.com\",\n\t\"username\": \"gabrielson\",\n\t\"password\": \"senha123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/login",
+					"request": {
+						"url": "http://localhost:5000/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"mail1111@mail.com\",\n\t\"username\": \"gabrielson\",\n\t\"password\": \"senha123\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CompanyProducts",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:5000/CompanyProducts/",
+					"request": {
+						"url": "http://localhost:5000/CompanyProducts/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUzNTUzMzcsIm5iZiI6MTU5NTM1NTMzNywianRpIjoiODU2YzhjOGUtNWNjOS00NDQ2LWE0YTMtYjQxY2E3NDU0N2I0IiwiZXhwIjoxNTk1NDQxNzM3LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.n4G8rzOQFfi1O5TEaR9xWDOTahb8lxhbk1PrxRx2IJ8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/CompanyProducts/",
+					"request": {
+						"url": "http://localhost:5000/CompanyProducts/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUzNTUzMzcsIm5iZiI6MTU5NTM1NTMzNywianRpIjoiODU2YzhjOGUtNWNjOS00NDQ2LWE0YTMtYjQxY2E3NDU0N2I0IiwiZXhwIjoxNTk1NDQxNzM3LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.n4G8rzOQFfi1O5TEaR9xWDOTahb8lxhbk1PrxRx2IJ8",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"company_id\": \"tim_13\",\n\t\"products\": [\n\t\t{\"product_id\": \"tim_13\", \"value\": 10.00}\n\t]\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/CompanyProducts/",
+					"request": {
+						"url": "http://localhost:5000/CompanyProducts/",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUzNTUzMzcsIm5iZiI6MTU5NTM1NTMzNywianRpIjoiODU2YzhjOGUtNWNjOS00NDQ2LWE0YTMtYjQxY2E3NDU0N2I0IiwiZXhwIjoxNTk1NDQxNzM3LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.n4G8rzOQFfi1O5TEaR9xWDOTahb8lxhbk1PrxRx2IJ8",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"company_id\": \"tim_13\",\n\t\"products\": [\n\t\t{\"product_id\": \"tim_13\", \"value\": 10.00},\n\t\t{\"product_id\": \"tim_13\", \"value\": 20.00}\n\t]\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/CompanyProducts/",
+					"request": {
+						"url": {
+							"raw": "http://localhost:5000/CompanyProducts/?company_id=tim_11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"CompanyProducts",
+								""
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "tim_11",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUzNTUzMzcsIm5iZiI6MTU5NTM1NTMzNywianRpIjoiODU2YzhjOGUtNWNjOS00NDQ2LWE0YTMtYjQxY2E3NDU0N2I0IiwiZXhwIjoxNTk1NDQxNzM3LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.n4G8rzOQFfi1O5TEaR9xWDOTahb8lxhbk1PrxRx2IJ8",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"company_id\": \"tim_11\",\n\t\"products\": [\n\t\t{\"product_id\": \"tim_11\", \"value\": 10.00},\n\t\t{\"product_id\": \"tim_11\", \"value\": 20.00}\n\t]\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recharge",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:5000/PhoneRecharges/",
+					"request": {
+						"url": "http://localhost:5000/PhoneRecharges/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUzNTUzMzcsIm5iZiI6MTU5NTM1NTMzNywianRpIjoiODU2YzhjOGUtNWNjOS00NDQ2LWE0YTMtYjQxY2E3NDU0N2I0IiwiZXhwIjoxNTk1NDQxNzM3LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.n4G8rzOQFfi1O5TEaR9xWDOTahb8lxhbk1PrxRx2IJ8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/PhoneRecharges/",
+					"request": {
+						"url": "http://localhost:5000/PhoneRecharges/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTUzNTUzMzcsIm5iZiI6MTU5NTM1NTMzNywianRpIjoiODU2YzhjOGUtNWNjOS00NDQ2LWE0YTMtYjQxY2E3NDU0N2I0IiwiZXhwIjoxNTk1NDQxNzM3LCJpZGVudGl0eSI6MSwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIn0.n4G8rzOQFfi1O5TEaR9xWDOTahb8lxhbk1PrxRx2IJ8",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": \"tim_13\",\n    \"product_id\": \"tim_13\",\n    \"phone_number\": \"5511999999999\",\n    \"value\": 10.00\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
