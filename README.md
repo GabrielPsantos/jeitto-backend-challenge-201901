@@ -133,17 +133,17 @@ O que **gostariamos** de ver:
 
 #### Rode as migrations
 
-  docker-compose exec web flask db init
-  docker-compose exec web flask db migrate
-  docker-compose exec web flask db upgrade
+      docker-compose exec web flask db init
+      docker-compose exec web flask db migrate
+      docker-compose exec web flask db upgrade
 
 #### Execute os testes
 
-docker-compose exec web coverage run --source=project -m unittest discover -s tests/
+    docker-compose exec web coverage run --source=project -m unittest discover -s tests/
 
 #### Gere o HTML de Cobertura
 
-docker-compose exec web coverage html
+    docker-compose exec web coverage html
 
 #### REST API
 
