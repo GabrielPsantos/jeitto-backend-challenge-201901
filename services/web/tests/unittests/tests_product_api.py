@@ -2,7 +2,7 @@ from flask import url_for
 from .flask_base_tests_cases import TestFlaskBase
 
 
-class TestCadastro(TestFlaskBase):
+class TestInsert(TestFlaskBase):
     def test_company_product_ok(self):
         self.create_user()
         token = self.create_token()
@@ -61,8 +61,8 @@ class TestCadastro(TestFlaskBase):
         self.assertEqual(response_2.status_code, 422)
 
 
-class TestMostrar(TestFlaskBase):
-    def test_mostrar_deve_retornar_uma_query_vazia(self):
+class TestShow(TestFlaskBase):
+    def test_show_empty_query(self):
         self.create_user()
         token = self.create_token()
         response = self.client.get(
@@ -71,7 +71,7 @@ class TestMostrar(TestFlaskBase):
         )
         self.assertEqual([], response.json)
 
-    def test_mostrar_deve_retornar_um_query_com_elemento_iserido(self):
+    def test_show_element_inserted(self):
         self.create_user()
         token = self.create_token()
         dado1 = {
@@ -89,7 +89,7 @@ class TestMostrar(TestFlaskBase):
             url_for('companyProducts.listOneAll'), headers=token)
         self.assertEqual(1, len(response.json))
 
-    def test_mostrar_deve_retornar_um_query_com_elemento_inserido_busca(self):
+    def test_show_by_company_id(self):
         self.create_user()
         token = self.create_token()
         dado1 = {
@@ -109,22 +109,22 @@ class TestMostrar(TestFlaskBase):
         self.assertEqual(1, len(response.json))
 
 
-class TestDeletar(TestFlaskBase):
-    def test_delete_oq_n_existe(self):
+class TestDelete(TestFlaskBase):
+    def test_delete_non_existent(self):
         self.create_user()
         token = self.create_token()
         response = self.client.delete(url_for('companyProducts.delete',
                                               company_id='claro_11'), headers=token)
         self.assertEqual(response.status_code, 404)
 
-    def test_deletar_sem_company_id(self):
+    def test_delete_without_company_id(self):
         self.create_user()
         token = self.create_token()
         response = self.client.delete(
             url_for('companyProducts.delete'), headers=token)
         self.assertEqual(response.status_code, 401)
 
-    def test_cadastrar_deletar(self):
+    def test_delete_success(self):
         self.create_user()
         token = self.create_token()
         dado1 = {
@@ -146,8 +146,8 @@ class TestDeletar(TestFlaskBase):
         self.assertEqual(response.status_code, 204)
 
 
-class Testmodificar(TestFlaskBase):
-    def test_modificar_(self):
+class TestUpdate(TestFlaskBase):
+    def test_update(self):
         self.create_user()
         token = self.create_token()
         estado_inicial = {
@@ -179,7 +179,7 @@ class Testmodificar(TestFlaskBase):
         )
         self.assertEqual(estado_final, response.json)
 
-    def test_modificar_erro_validacao(self):
+    def test_update_error(self):
         self.create_user()
         token = self.create_token()
         estado_inicial = {

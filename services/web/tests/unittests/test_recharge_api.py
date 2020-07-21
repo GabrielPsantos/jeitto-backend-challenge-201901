@@ -2,7 +2,7 @@ from flask import url_for
 from .flask_base_tests_cases import TestFlaskBase
 
 
-class TestCadastro(TestFlaskBase):
+class TestInsert(TestFlaskBase):
     def test_company_product_ok(self):
         self.create_user()
         token = self.create_token()
@@ -41,8 +41,8 @@ class TestCadastro(TestFlaskBase):
         self.assertEqual(response.status_code, 422)
 
 
-class TestMostrar(TestFlaskBase):
-    def test_mostrar_deve_retornar_uma_query_vazia(self):
+class TestShow(TestFlaskBase):
+    def test_show_empty_query(self):
         self.create_user()
         token = self.create_token()
         response = self.client.get(
@@ -51,7 +51,7 @@ class TestMostrar(TestFlaskBase):
         )
         self.assertEqual([], response.json)
 
-    def test_mostrar_deve_retornar_um_query_com_elemento_iserido(self):
+    def test_show_element_inserted(self):
         self.create_user()
         token = self.create_token()
         dado1 = {
@@ -66,7 +66,7 @@ class TestMostrar(TestFlaskBase):
             url_for('phoneRecharges.listOneAll'), headers=token)
         self.assertEqual(1, len(response.json))
 
-    def test_mostrar_deve_retornar_um_query_com_elemento_inserido_busca_by_phone(self):
+    def test_show_element_by_phone(self):
         self.create_user()
         token = self.create_token()
         dado1 = {
@@ -82,7 +82,7 @@ class TestMostrar(TestFlaskBase):
                                    headers=token)
         self.assertEqual(1, len(response.json))
 
-    def test_mostrar_deve_retornar_um_query_com_elemento_inserido_busca_by_id(self):
+    def test_shoe_element_by_id(self):
         self.create_user()
         token = self.create_token()
         dado1 = {
